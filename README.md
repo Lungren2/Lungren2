@@ -2,19 +2,11 @@
 
 <div align="center">
   
-  <!-- Tab buttons -->
-  <div id="tabs">
-    <a href="#about" id="aboutTab" style="display: inline-block; padding: 10px 20px; margin: 0 5px; text-decoration: none; border-radius: 5px; font-weight: bold; background-color: #0366d6; color: white;">About Me</a>
-    <a href="#projects" id="projectsTab" style="display: inline-block; padding: 10px 20px; margin: 0 5px; text-decoration: none; border-radius: 5px; font-weight: bold; color: #24292e;">Projects</a>
-    <a href="#skills" id="skillsTab" style="display: inline-block; padding: 10px 20px; margin: 0 5px; text-decoration: none; border-radius: 5px; font-weight: bold; color: #24292e;">Skills</a>
-    <a href="#contact" id="contactTab" style="display: inline-block; padding: 10px 20px; margin: 0 5px; text-decoration: none; border-radius: 5px; font-weight: bold; color: #24292e;">Contact</a>
-  </div>
-  
-  <!-- Divider -->
-  <hr style="margin: 20px 0;">
-  
-  <!-- Tab content sections -->
-  <div id="about" style="display: block;">
+<!-- Tab System: Uses HTML details/summary tags for interactive content -->
+<!-- The "open" attribute on the first details element makes it expanded by default -->
+<details open>
+  <summary style="display: inline-block; padding: 8px 16px; background-color: #0366d6; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 4px;">About Me</summary>
+  <div style="padding: 20px; border: 1px solid #e1e4e8; border-radius: 6px; margin-top: 10px;">
     <h2>🧑‍💻 About Me</h2>
     <p>Hello! I'm a passionate developer interested in [your interests here]. Currently working on [current focus or job].</p>
     <p>When I'm not coding, you'll find me [your hobbies/interests].</p>
@@ -27,35 +19,41 @@
       <li>💬 Ask me about [topics you're knowledgeable in]</li>
     </ul>
   </div>
-  
-  <div id="projects" style="display: none;">
+</details>
+
+<details>
+  <summary style="display: inline-block; padding: 8px 16px; background-color: #6f42c1; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 4px;">Projects</summary>
+  <div style="padding: 20px; border: 1px solid #e1e4e8; border-radius: 6px; margin-top: 10px;">
     <h2>🚀 Featured Projects</h2>
     
     <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
       <!-- Project Card 1 -->
-      <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; width: 300px;">
+      <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; width: 300px; margin: 10px;">
         <h3>Project Name 1</h3>
         <p>Short description of this project and what technologies were used.</p>
         <a href="https://github.com/yourusername/project1">View Project →</a>
       </div>
       
       <!-- Project Card 2 -->
-      <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; width: 300px;">
+      <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; width: 300px; margin: 10px;">
         <h3>Project Name 2</h3>
         <p>Short description of this project and what technologies were used.</p>
         <a href="https://github.com/yourusername/project2">View Project →</a>
       </div>
       
       <!-- Project Card 3 -->
-      <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; width: 300px;">
+      <div style="border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; width: 300px; margin: 10px;">
         <h3>Project Name 3</h3>
         <p>Short description of this project and what technologies were used.</p>
         <a href="https://github.com/yourusername/project3">View Project →</a>
       </div>
     </div>
   </div>
-  
-  <div id="skills" style="display: none;">
+</details>
+
+<details>
+  <summary style="display: inline-block; padding: 8px 16px; background-color: #2ea44f; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 4px;">Skills</summary>
+  <div style="padding: 20px; border: 1px solid #e1e4e8; border-radius: 6px; margin-top: 10px;">
     <h2>🛠️ Skills & Technologies</h2>
     
     <h3>Languages</h3>
@@ -80,8 +78,11 @@
       <!-- Add more tools you use -->
     </p>
   </div>
-  
-  <div id="contact" style="display: none;">
+</details>
+
+<details>
+  <summary style="display: inline-block; padding: 8px 16px; background-color: #d73a49; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; margin: 4px;">Contact</summary>
+  <div style="padding: 20px; border: 1px solid #e1e4e8; border-radius: 6px; margin-top: 10px;">
     <h2>📫 Get In Touch</h2>
     <p>Feel free to reach out to me through any of these platforms:</p>
     
@@ -103,51 +104,9 @@
     <h3>💌 Want to collaborate?</h3>
     <p>I'm always open to interesting projects and collaborations. Don't hesitate to reach out!</p>
   </div>
-</div>
+</details>
 
-<!-- JavaScript for tab functionality -->
-<script>
-  // This script won't actually run on GitHub, but keeping it here for reference
-  document.addEventListener('DOMContentLoaded', function() {
-    // Tab click handlers
-    document.getElementById('aboutTab').addEventListener('click', function() {
-      showTab('about');
-    });
-    document.getElementById('projectsTab').addEventListener('click', function() {
-      showTab('projects');
-    });
-    document.getElementById('skillsTab').addEventListener('click', function() {
-      showTab('skills');
-    });
-    document.getElementById('contactTab').addEventListener('click', function() {
-      showTab('contact');
-    });
-    
-    function showTab(tabId) {
-      // Hide all tabs
-      document.getElementById('about').style.display = 'none';
-      document.getElementById('projects').style.display = 'none';
-      document.getElementById('skills').style.display = 'none';
-      document.getElementById('contact').style.display = 'none';
-      
-      // Show selected tab
-      document.getElementById(tabId).style.display = 'block';
-      
-      // Update tab styling
-      document.getElementById('aboutTab').style.backgroundColor = '';
-      document.getElementById('aboutTab').style.color = '#24292e';
-      document.getElementById('projectsTab').style.backgroundColor = '';
-      document.getElementById('projectsTab').style.color = '#24292e';
-      document.getElementById('skillsTab').style.backgroundColor = '';
-      document.getElementById('skillsTab').style.color = '#24292e';
-      document.getElementById('contactTab').style.backgroundColor = '';
-      document.getElementById('contactTab').style.color = '#24292e';
-      
-      document.getElementById(tabId + 'Tab').style.backgroundColor = '#0366d6';
-      document.getElementById(tabId + 'Tab').style.color = 'white';
-    }
-  });
-</script>
+</div>
 
 <!-- GitHub Stats -->
 <p align="center">
